@@ -4,6 +4,8 @@ $SYNC_BASE = '/dev/shm/wp/';
 
 if(!is_dir($SYNC_BASE)) mkdir($SYNC_BASE,0755, true);
 
+system("wp-cli core download --path='".$SYNC_BASE."' --allow-root");
+
 function RUN_AT_DIR($DIR) {
     echo $DIR . PHP_EOL;
 }
